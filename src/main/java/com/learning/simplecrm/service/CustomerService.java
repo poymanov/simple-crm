@@ -1,9 +1,9 @@
-package com.learning.simplecrm.dao;
+package com.learning.simplecrm.service;
 
 import com.learning.simplecrm.entity.Customer;
 
 import java.util.List;
 
-public interface CustomerDAO {
+public interface CustomerService {
     List<Customer> getCustomers();
 }
