@@ -11,3 +11,4 @@ create table customers
 create unique index table_name_id_uindex
     on customers (id);
 
+ALTER SEQUENCE customers_id_seq RESTART WITH 6;
