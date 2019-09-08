@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%--@elvariable id="customer" type="com.learning.simplecrm.entity.Customer"--%>
+
 <html>
 <head>
     <title>Save customer</title>
@@ -15,6 +17,7 @@
     <div id="container">
         <h3>Save customer</h3>
         <form:form action="saveCustomer" modelAttribute="customer" method="post">
+            <form:hidden path="id" />
             <table>
                 <tbody>
                     <tr>

@@ -5,10 +5,7 @@ import com.learning.simplecrm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/customers")
@@ -37,5 +34,11 @@ public class CustomerController {
     public String saveCustomer(@ModelAttribute Customer customer) {
         customerService.saveCustomer(customer);
         return "redirect:/customers/list";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam Integer customerId, Model model) {
+        model.addAttribute("customer", customerService.getCustomer(customerId));
+        return "customer-form";
     }
 }
